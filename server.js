@@ -14,7 +14,6 @@ Http.createServer(async (req, res) => {
         source.setEncoding('utf8');
         for await (const body of source) {
           console.log(`[${++counter}] - request!`, body.toString());
-          debugger;
           const item = JSON.parse(body);
           const result = sum(...Object.values(item));
           yield `Resultado: ${result}`;
